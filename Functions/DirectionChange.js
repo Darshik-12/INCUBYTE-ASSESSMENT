@@ -1,52 +1,46 @@
-const NorthDirection = require("../RoverDirections").NorthDirection;
-const SouthDirection = require("../RoverDirections").SouthDirection;
-const EastDirection = require("../RoverDirections").EastDirection;
-const WestDirection = require("../RoverDirections").WestDirection;
-const UpDirection = require("../RoverDirections").UpDirection;
-const DownDirection = require("../RoverDirections").DownDirection;
 
 
 function DirectionChange(initialDirection, rotateRoverTo) {
     if (initialDirection === "NTH" && rotateRoverTo === "LT") {
-        return NorthDirection.LT;
+        return "WT";
     }
     if (initialDirection === "NTH" && rotateRoverTo === "RT") {
-        return NorthDirection.RT;
+        return "ET";
     }
 
     if (initialDirection === "STH" && rotateRoverTo === "LT") {
-        return SouthDirection.LT;
+        return "ET";
     }
     if (initialDirection === "STH" && rotateRoverTo === "RT") {
-        return SouthDirection.RT;
+        return "WT";
     }
 
     if (initialDirection === "ET" && rotateRoverTo === "LT") {
-        return EastDirection.LT;
+        return "NTH";
     }
     if (initialDirection === "ET" && rotateRoverTo === "RT") {
-        return EastDirection.RT;
+        return "STH";
     }
 
     if (initialDirection === "WT" && rotateRoverTo === "LT") {
-        return WestDirection.LT;
+        return "STH";
     }
     if (initialDirection === "WT" && rotateRoverTo === "RT") {
-        return WestDirection.RT;
+        return "NTH";
     }
 
     if (initialDirection === "UP" && rotateRoverTo === "LT") {
-        return UpDirection.LT;
+        return "WT";
     }
     if (initialDirection === "UP" && rotateRoverTo === "RT") {
-        return UpDirection.RT;
+        return "ET";
     }
 
     if (initialDirection === "DN" && rotateRoverTo === "LT") {
-        return DownDirection.LT;
+        return "ET";
     }
     if (initialDirection === "DN" && rotateRoverTo === "RT") {
-        return DownDirection.RT;
+        return "WT";
     }
 
     if (rotateRoverTo === "UP") {
@@ -54,20 +48,6 @@ function DirectionChange(initialDirection, rotateRoverTo) {
     }
     if (rotateRoverTo === "DN") {
         return "DN";
-    }
-
-    if (rotateRoverTo === "NTH") {
-        return "NTH";
-    }
-    if (rotateRoverTo === "STH") {
-        return "STH";
-    }
-
-    if (rotateRoverTo === "ET") {
-        return "ET";
-    }
-    if (rotateRoverTo === "WT") {
-        return "WT";
     }
 }
 

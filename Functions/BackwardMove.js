@@ -1,27 +1,23 @@
-function BackwardMove(position, direction) {
-    let temporary = position;
+function backwardMove(currentPosition, direction) {
+    let newPosition = [...currentPosition];
 
     if (direction === "NTH") {
-        temporary[1] += 1;
+        newPosition[1] -= 1;
+    } else if (direction === "STH") {
+        newPosition[1] += 1;
+    } else if (direction === "ET") {
+        newPosition[0] -= 1;
+    } else if (direction === "WT") {
+        newPosition[0] += 1;
+    } else if (direction === "UP") {
+        newPosition[2] -= 1;
+    } else if (direction === "DN") {
+        newPosition[2] += 1;
     }
-    else if (direction === "STH") {
-        temporary[1] -= 1;
-    }
-    else if (direction === "ET") {
-        temporary[0] += 1;
-    }
-    else if (direction === "WT") {
-        temporary[0] -= 1;
-    }
-    else if (direction === "UP") {
-        temporary[2] += 1;
-    }
-    else if (direction === "DOWN") {
-        temporary[2] -= 1;
-    }
-    return temporary;
+
+    return newPosition;
 }
 
 module.exports = {
-    BackwardMove,
+    backwardMove
 };

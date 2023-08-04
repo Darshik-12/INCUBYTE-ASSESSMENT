@@ -16,8 +16,11 @@ function ForwardMove(position, direction) {
     else if (direction === "UP") {
         temporary[2] += 1;
     }
-    else if (direction === "DOWN") {
+    else if (direction === "DN") {
         temporary[2] -= 1;
+    }
+    else {
+        return "Invalid Direction";
     }
     return temporary;
 }
