@@ -41,6 +41,3 @@ test("forward moves when rover facing Down", () => {
     position = ForwardMove(position, direction);
     expect(position).toStrictEqual([0, 0, -1]);
 });
-
-/** Invalid Instruction */
-
